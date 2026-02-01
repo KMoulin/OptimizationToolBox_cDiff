@@ -1,0 +1,25 @@
+
+NOSYNGO()
+
+##-----------------------------------------------------------------------------
+## local compiler flags
+##-----------------------------------------------------------------------------
+
+CPPFLAGS (-DOPTIMP_EXPORTS)
+
+
+# signal warnings as errors
+IF_WIN(CPPFLAGS(/WX))
+IF_LINUX(CPPFLAGS(-DMR_MORE_WARNINGS))
+
+
+#------------------------
+# Modified Diff packages: Organized as in a_ep2d_diff
+#------------------------
+
+CPPSOURCES (Optimization_Plugin)
+
+##-----------------------------------------------------------------------------
+## target name
+##
+LIB(libOptimization_Plugin)
